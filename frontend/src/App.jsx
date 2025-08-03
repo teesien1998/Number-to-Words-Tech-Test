@@ -88,7 +88,7 @@ function App() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 15 }}
           transition={{ duration: 0.8 }}
-          className="text-center space-y-4"
+          className="text-center space-y-4 mt-10"
         >
           <div className="inline-flex items-center justify-center w-16 h-16 bg-linear-to-br from-orange-500 from-30%  to-amber-500 to-70% rounded-2xl mb-4 shadow-lg">
             <FaHashtag className="w-8 h-8 text-white" />
