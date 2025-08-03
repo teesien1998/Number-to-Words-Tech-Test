@@ -93,10 +93,7 @@ Tech Test/
 
 ### Tee Sien Lau
 
-- **GitHub:** [Number-to-Words-Tech-Test
-  ](https://github.com/teesien1998/Number-to-Words-Tech-Test)
+- **GitHub:** [Number-to-Words-Tech-Test](https://github.com/teesien1998/Number-to-Words-Tech-Test)
 - **License:** MIT License
 
 ---
-
->
