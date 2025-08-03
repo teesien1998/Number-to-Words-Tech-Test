@@ -231,11 +231,6 @@ function App() {
                 )} */}
             </div>
           </div>
-          <div className="mt-8 pt-6 border-t border-gray-200 w-full">
-            <p className="text-center text-sm text-gray-500">
-              Built By Tee Sien Lau ✅
-            </p>
-          </div>
         </motion.div>
       </main>
     </>
