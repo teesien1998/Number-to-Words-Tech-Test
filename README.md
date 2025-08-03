@@ -45,14 +45,18 @@ Tech Test/
    npm install    # Only needed first time
    ```
 
-4. **Install Dependencies at Project Root**:
+4. **Frontend Environment Variables (.env)**:
+
+   - `VITE_BACKEND_URL=http://localhost:3000`
+
+5. **Install Dependencies at Project Root**:
 
    ```bash
    cd ..
    npm install
    ```
 
-5. **Running the App Locally at Project Root**:
+6. **Running the App Locally at Project Root**:
 
    ```bash
    npm run dev

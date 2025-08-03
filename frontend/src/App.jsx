@@ -19,6 +19,9 @@ function App() {
   const [error, setError] = useState("");
   const [copied, setCopied] = useState("");
 
+  const backendUrl =
+    import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+
   const convertNumberToWords = async () => {
     if (!number.trim()) {
       setError("Please enter a number");
@@ -36,7 +39,7 @@ function App() {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:3000/api/convert", {
+      const response = await axios.post(`${backendUrl}/api/convert`, {
         amount: numValue,
       });
 
