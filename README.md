@@ -1,4 +1,4 @@
-# Tech Test - Full Stack Application
+# Number to Words - Full Stack Application
 
 A full-stack application with a React frontend and Node.js backend designed to convert numerical input into its English word representation.
 
