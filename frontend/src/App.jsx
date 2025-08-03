@@ -84,9 +84,9 @@ function App() {
     <>
       <main className="px-4 py-12">
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 10 }}
+          exit={{ opacity: 0, y: 15 }}
           transition={{ duration: 0.8 }}
           className="text-center space-y-4"
         >
@@ -103,9 +103,9 @@ function App() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 10 }}
+          exit={{ opacity: 0, y: 15 }}
           delay={{ duration: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="flex flex-col items-center justify-center p-4"
