@@ -15,10 +15,18 @@ const PORT = process.env.PORT || 3000;
 app.use(helmet()); // Security headers
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5174", // Vite default port
+    origin: process.env.FRONTEND_URL || "http://localhost:5174",
+    methods: ["POST", "GET"],
     credentials: true,
   })
 );
+
+console.log(
+  `CORS enabled for origin: ${
+    process.env.FRONTEND_URL || "http://localhost:5174"
+  }`
+);
+
 app.use(morgan("combined")); // Logging
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

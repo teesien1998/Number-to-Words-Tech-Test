@@ -22,6 +22,8 @@ function App() {
   const backendUrl =
     import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
+  console.log("Backend URL:", backendUrl);
+
   const convertNumberToWords = async () => {
     if (!number.trim()) {
       setError("Please enter a number");

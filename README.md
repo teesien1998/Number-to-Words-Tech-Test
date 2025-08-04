@@ -53,7 +53,7 @@ Tech Test/
 
    ```bash
    cd ..
-   npm install
+   npm install    # Only needed first time
    ```
 
 6. **Running the App Locally at Project Root**:
