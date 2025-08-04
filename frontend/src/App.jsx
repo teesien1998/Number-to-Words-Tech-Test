@@ -19,6 +19,9 @@ function App() {
   const [error, setError] = useState("");
   const [copied, setCopied] = useState("");
 
+  console.log("Number:", number);
+  console.log("Trimmed Number:", number.trim());
+
   const backendUrl =
     import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
 
@@ -33,6 +36,12 @@ function App() {
     const numValue = parseFloat(number);
 
     if (isNaN(numValue) || numValue < 0) {
+      addToast({
+        title: "Error",
+        description: "Please enter a valid non-negative number",
+        color: "danger",
+        placement: "top-center",
+      });
       setError("Please enter a valid non-negative number");
       return;
     }
@@ -47,6 +56,12 @@ function App() {
 
       setWords(response.data.words);
     } catch (error) {
+      addToast({
+        title: "Error",
+        description: error.message || "Cannot connect to backend server",
+        color: "danger",
+        placement: "top-center",
+      });
       setError(error.message || "Cannot connect to backend server");
     } finally {
       setLoading(false);
@@ -56,25 +71,20 @@ function App() {
   const handleInputChange = (e) => {
     const value = e.target.value;
 
-    // Allow blank input
     if (value === "") {
       setNumber("");
-
       return;
     }
 
-    // Only allow positive numbers
     const num = Number(value);
     if (isNaN(num) || num < 0) return;
 
-    // If user typed a decimal, process cents
     if (value.includes(".")) {
       const [dollars, cents = ""] = value.split(".");
-      const trimmedCents = cents.slice(0, 2); // Don't pad yet
+      const trimmedCents = cents.slice(0, 2);
       const finalValue = `${dollars}.${trimmedCents}`;
       setNumber(finalValue);
     } else {
-      // If whole number, just keep as is
       setNumber(value);
     }
   };
@@ -116,18 +126,6 @@ function App() {
           className="flex flex-col items-center justify-center p-4"
         >
           <div className="bg-white rounded-lg shadow-lg p-8 mt-4 max-w-xl w-full">
-            {/* <div className="text-center mb-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-linear-to-br from-orange-500 from-30%  to-amber-500 to-70% rounded-2xl mb-4 shadow-lg">
-                  <FaHashtag className="w-8 h-8 text-white" />
-                </div>
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">
-                  Number to Words Converter
-                </h1>
-                <p className="text-gray-600">
-                  Enter a number to convert it into words.
-                </p>
-              </div> */}
-
             <div className="space-y-6">
               {/* Input Section */}
               <div className="flex flex-col space-y-3">
@@ -172,11 +170,11 @@ function App() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.5 }}
-                    className="w-full bg-red-50 border-l-4 border-red-400 p-4 rounded-lg animate-fade-in"
+                    className="w-full bg-red-50 border-l-4 border-red-500 p-4 rounded-lg animate-fade-in"
                   >
                     <div className="flex items-center">
-                      <BsExclamationCircle className="w-5 h-5 text-red-400 mr-2 flex-shrink-0" />
-                      <span className="text-red-700 font-medium">{error}</span>
+                      <BsExclamationCircle className="w-5 h-5 text-red-500 mr-2 flex-shrink-0" />
+                      <span className="text-red-600 font-medium">{error}</span>
                     </div>
                   </motion.div>
                 )}
@@ -216,24 +214,6 @@ function App() {
                   </motion.div>
                 )}
               </AnimatePresence>
-
-              {/* {words && (
-                  <div className="w-full bg-green-50 border-2 border-green-200 p-6 rounded-xl animate-fade-in">
-                    <div className="flex items-start space-x-3">
-                      <div>
-                        <FaRegCheckCircle className="w-6 h-6 text-green-600 mt-1" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-green-800 mb-2">
-                          Result:
-                        </h3>
-                        <p className="text-green-700 text-lg leading-relaxed font-medium">
-                          {words}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                )} */}
             </div>
           </div>
         </motion.div>

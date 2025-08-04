@@ -5,7 +5,6 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 import convertRoutes from "./routes/convertRoutes.js";
 
-// Load environment variables
 dotenv.config();
 
 const app = express();

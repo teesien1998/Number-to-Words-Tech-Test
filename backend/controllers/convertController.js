@@ -1,4 +1,3 @@
-// === Core conversion logic ===
 const belowTwenty = [
   "Zero",
   "One",
@@ -97,7 +96,6 @@ export const convertNumberToWords = (req, res) => {
     let words = "";
 
     if (dollars === 0 && cents > 0) {
-      // Only cents case (e.g., 0.99)
       words = convert(cents) + (cents === 1 ? " Cent" : " Cents");
     } else {
       const dollarWords =
