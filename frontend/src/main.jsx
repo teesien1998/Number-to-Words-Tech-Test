@@ -7,8 +7,8 @@ import { ToastProvider } from "@heroui/react";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <HeroUIProvider placement="top-center">
-      <ToastProvider />
+    <HeroUIProvider>
+      <ToastProvider placement="top-center" />
       <App />
     </HeroUIProvider>
   </StrictMode>

@@ -40,7 +40,6 @@ function App() {
         title: "Error",
         description: "Please enter a valid non-negative number",
         color: "danger",
-        placement: "top-center",
       });
       setError("Please enter a valid non-negative number");
       return;
@@ -60,7 +59,6 @@ function App() {
         title: "Error",
         description: error.message || "Cannot connect to backend server",
         color: "danger",
-        placement: "top-center",
       });
       setError(error.message || "Cannot connect to backend server");
     } finally {
