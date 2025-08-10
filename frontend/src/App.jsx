@@ -20,7 +20,7 @@ function App() {
   const [copied, setCopied] = useState("");
 
   console.log("Number:", number);
-  console.log("Trimmed Number:", number.trim());
+  console.log("Trimmed Number:", !number.trim());
 
   const backendUrl =
     import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
@@ -153,9 +153,13 @@ function App() {
                 isLoading={loading}
                 spinner={<LuRefreshCw className="w-5 h-5 animate-spin" />}
                 onPress={convertNumberToWords}
-                disabled={loading || !number.trim()}
+                isDisabled={loading || !number.trim()}
                 color="primary"
-                className="w-full font-semibold text-base bg-indigo-600 hover:bg-indigo-500 !opacity-100"
+                className={`w-full font-semibold text-base bg-indigo-600 hover:bg-indigo-500 ${
+                  loading || !number.trim()
+                    ? `!opacity-[var(--heroui-disabled-opacity)]`
+                    : `!opacity-100`
+                }`}
               >
                 {loading ? "Converting..." : "Convert to Words"}
               </Button>
