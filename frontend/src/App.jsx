@@ -123,7 +123,7 @@ function App() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="flex flex-col items-center justify-center p-4"
         >
-          <div className="bg-white rounded-lg shadow-lg p-8 mt-4 max-w-xl w-full">
+          <div className="bg-white rounded-lg shadow-lg p-8 mt-5 max-w-xl w-full">
             <div className="space-y-6">
               {/* Input Section */}
               <div className="flex flex-col space-y-3">
@@ -165,7 +165,7 @@ function App() {
               </Button>
 
               {/* Error Message */}
-              <AnimatePresence>
+              <AnimatePresence mode="wait">
                 {error && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
