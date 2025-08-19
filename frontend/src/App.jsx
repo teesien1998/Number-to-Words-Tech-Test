@@ -109,7 +109,7 @@ function App() {
             <img
               src={convertToTextIcon}
               alt="Convert to Text"
-              className="w-8 h-8"
+              className="w-10 h-10"
             />
           </div>
           <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 from-30%  to-blue-600 to-70% bg-clip-text text-transparent">
