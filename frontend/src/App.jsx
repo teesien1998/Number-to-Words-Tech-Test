@@ -2,15 +2,12 @@ import { useState } from "react";
 import { Input, addToast, Button } from "@heroui/react";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  FaHashtag,
-  FaRegCheckCircle,
-  FaExclamationCircle,
-  FaCopy,
-} from "react-icons/fa";
+import { FaRegCheckCircle, FaExclamationCircle, FaCopy } from "react-icons/fa";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import { BsExclamationCircle } from "react-icons/bs";
 import { LuRefreshCw } from "react-icons/lu";
+
+import convertToTextIcon from "./assets/convertToText.svg";
 
 function App() {
   const [number, setNumber] = useState("");
@@ -104,7 +101,11 @@ function App() {
           className="text-center space-y-4 mt-10"
         >
           <div className="inline-flex items-center justify-center w-16 h-16 bg-linear-to-br from-orange-500 from-30%  to-amber-500 to-70% rounded-2xl mb-4 shadow-lg">
-            <FaHashtag className="w-8 h-8 text-white" />
+            <img
+              src={convertToTextIcon}
+              alt="Convert to Text"
+              className="w-8 h-8"
+            />
           </div>
           <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-600 from-30%  to-blue-600 to-70% bg-clip-text text-transparent">
             Number to Words Converter
