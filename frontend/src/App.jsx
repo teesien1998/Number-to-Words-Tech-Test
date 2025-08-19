@@ -43,6 +43,7 @@ function App() {
     }
 
     setLoading(true);
+    setWords("");
     setError("");
 
     try {
@@ -52,12 +53,16 @@ function App() {
 
       setWords(response.data.words);
     } catch (error) {
+      console.log(error);
+      const backendMessage = error?.response?.data?.error;
+      const message =
+        backendMessage || error.message || "Cannot connect to backend server";
       addToast({
         title: "Error",
-        description: error.message || "Cannot connect to backend server",
+        description: message,
         color: "danger",
       });
-      setError(error.message || "Cannot connect to backend server");
+      setError(message);
     } finally {
       setLoading(false);
     }
